@@ -26,12 +26,12 @@ jobs:
       
     - name: Build
       run: |
-        cd task-tracker01.WebApp
+        cd DotNet.WebApp
         dotnet build --configuration Release --no-restore
-        dotnet publish -c Release -o ../task-tracker01-webapp -r linux-x64 --self-contained true /p:UseAppHost=true
+        dotnet publish -c Release -o ../dotnet-webapp -r linux-x64 --self-contained true /p:UseAppHost=true
     - name: Test
       run: |
-        cd task-tracker01.WebApp.Tests
+        cd DotNet.WebApp.Tests
         dotnet test --no-restore --verbosity normal
       
     - uses: azure/webapps-deploy@v2
@@ -39,4 +39,4 @@ jobs:
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
-        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/task-tracker01-webapp'
+        package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/dotnet-webapp'
