@@ -25,6 +25,13 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# Angular Cache
+.angular/*
+
+# Github
+.github/*
+!.github/workflows
+
 # misc
 /.sass-cache
 /connect.lock
