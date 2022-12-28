@@ -27,6 +27,7 @@
 
 # Angular Cache
 .angular/*
+.angular/cache/
 
 # Github
 .github/*
